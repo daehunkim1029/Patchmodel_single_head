@@ -1,8 +1,15 @@
-# CONFIG=patchnet_r10_1xb4_cityscapes-512x512
-CONFIG=patchnet_hyundae_pretrained_resnet18_3x3conv_512x512_wo_aug_lr5e-3_bs4_iter80k
-CONFIG_PATH=patchnet
+
+#python3 tools/train.py --work-dir work_dirs/0805_pre_wood_res18 configs/patchnet/patchnet_hyundae_512x512_wo_aug_lr5e-3_bs4_iter40k.py 
+#python3 tools/train.py --work-dir work_dirs/0805_pre_wood_res18_no_lr_change configs/patchnet/patchnet_hyundae_512x512_wo_aug_lr5e-3_bs4_iter40k_no_lr.py
+python3 tools/train.py --work-dir work_dirs/0805_wood_res34_develop_0.0001 configs/patchnet/patchnet_hyundae_512x512_wo_aug_lr5e-3_bs4_iter40k_resnet34.py
+python3 tools/train.py --work-dir work_dirs/0805_wood_res34_develop2_0.0005 configs/patchnet/develop2.py
+#python3 tools/train.py --work-dir work_dirs/0805_pre_wood_res34 configs/patchnet/patchnet_hyundae_512x512_wo_aug_lr5e-3_bs4_iter40k_resnet34_no_lr.py
+#python3 tools/train.py --work-dir work_dirs/0805_wood_res10 configs/patchnet/patchnet_res10.py
 
 
-CUDA_LAUNCH_BLOCKING=1 tools/dist_train.sh configs/$CONFIG_PATH/$CONFIG.py 1 --work-dir work_dir/$CONFIG_PATH/$CONFIG
-# PORT=29501 tools/dist_test.sh configs/$CONFIG_PATH/$CONFIG.py ./work_dir/$CONFIG_PATH/$CONFIG/iter_16000.pth 1 
 
+#python3 tools/train.py --work-dir work_dirs/0729_wood_resnet34_80k configs/patchnet/patchnet_hyundae_512x512_wo_aug_lr5e-3_bs4_iter40k_resnet34.py
+
+#python3 tools/train.py --work-dir work_dirs/0718_multi_head_FPN configs/patchnet/patchnnet_hyundae_512x512_wo_aug_lr5e-3_bs4_iter40k_FPN.py 
+
+#/mnt/4tb/hyundai/PatchModel/configs/patchnet/patch_net_hyundae_512x512_wo_aug_lr5e-3_bs4_iter40k_resnet34.py

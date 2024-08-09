@@ -1,6 +1,6 @@
 # dataset settings
 dataset_type = 'HyundaeDataset'
-data_root = 'data/hyundae/'
+data_root = 'data/woodscape/'
 crop_size = (512, 512)
 train_pipeline = [
     dict(type='LoadImageFromFile'),
@@ -55,5 +55,5 @@ val_dataloader = dict(
         pipeline=test_pipeline))
 test_dataloader = val_dataloader
 
-val_evaluator = dict(type='IoUMetric', iou_metrics=['mIoU'])
+val_evaluator = dict(type='IoUMetric', iou_metrics=['mFscore','mIoU'])
 test_evaluator = val_evaluator
